@@ -4,7 +4,6 @@ const {
   cloudinaryUploadImg,
   cloudinaryDeleteImg,
 } = require("../utils/cloudinary.js");
-const { validateMongoDbId } = require("../utils/validateMognoDbId.js");
 
 const uploadImages = asyncHandler(async (req, res) => {
   try {
@@ -30,7 +29,6 @@ const uploadImages = asyncHandler(async (req, res) => {
 const deleteImages = asyncHandler(async (req, res) => {
   try {
     const { id } = req.params;
-    validateMongoDbId(id);
     cloudinaryDeleteImg(id, "images");
     res.status(200).json({ message: "Deleted" });
   } catch (error) {

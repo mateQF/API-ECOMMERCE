@@ -12,6 +12,8 @@ const blogCategoryRoutes = require("./routes/blogCategory.routes.js");
 const brandRoutes = require("./routes/brand.routes.js");
 const couponRoutes = require("./routes/coupon.routes.js");
 const uploadRoutes = require("./routes/upload.routes.js");
+const colorRoutes = require("./routes/color.routes.js");
+const enquiryRoutes = require("./routes/enquiry.routes.js");
 
 const { notFound, errorHandler } = require("./middlewares/errorHandler.js");
 
@@ -33,6 +35,8 @@ app.use("/api/b-category", blogCategoryRoutes);
 app.use("/api/brand", brandRoutes);
 app.use("/api/coupon", couponRoutes);
 app.use("/api/upload", uploadRoutes);
+app.use("/api/color", colorRoutes);
+app.use("/api/enquiry", enquiryRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
